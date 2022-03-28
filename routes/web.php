@@ -16,7 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Media')->group(function(){
     Route::post('media', 'MediaController@media')->name('media.store');
 });
-
-Route::get('/', function () {
-    return view('welcome');
-});
