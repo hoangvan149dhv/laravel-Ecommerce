@@ -1,0 +1,43 @@
+@import "~font-awesome/scss/font-awesome";
+
+// Variables
+@import "variables";
+@import "mixins/mixins";
+
+// Bootstrap
+
+@import "~bootstrap/scss/bootstrap";
+
+// @import "theme/utilities/background";
+
+@import "~sweetalert2/src/sweetalert2";
+
+@import "~toastr/toastr";
+
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+
+@import "~datatables.net-responsive-bs4/css/responsive.bootstrap4.css";
+
+@import "~file-upload-with-preview/src/file-upload-with-preview";
+
+@import "~bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
+
+@import "~dropzone/dist/dropzone.css";
+
+//@import "~owl.carousel/src/scss/owl.carousel";
+//
+//@import "~owl.carousel/src/scss/owl.theme.default";
+
+@import "~select2/dist/css/select2.css";
+
+@import "~@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css";
+
+@import "customize";
+
+@import "layouts";
+
+@import "~@mdi/font/css/materialdesignicons.min.css";
+
+// Then import Bootstrap an BootstrapVue SCSS files (order is important)
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';
