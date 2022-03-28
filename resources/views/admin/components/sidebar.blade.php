@@ -36,7 +36,7 @@
                 </li>
 
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="{{ route('admin.categories.index') }}">
+                    <a class="sidenav-item-link" href="{{ route('admin.category.index') }}">
                         <i class="mdi mdi-folder-multiple-outline"></i>
                         <span class="nav-text">Danh mục sản phẩm</span>
                     </a>

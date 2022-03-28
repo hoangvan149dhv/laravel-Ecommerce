@@ -11,7 +11,7 @@
               <label for="category-name">Tên danh mục</label>
               <input type="text" class="form-control" name="name" id="category-name" data-vv-as="Tên danh mục"
                      v-validate="'required'" v-model="name"
-                     required>
+                     >
               <span
                   v-show="errors.has('name')"
                   class="text-danger"
@@ -63,15 +63,15 @@ export default {
     handleClick(e) {
       return this.$validator.validateAll(['name', 'desc']).then(result => {
         if (result) {
-          let method = 'post', routeName = route('admin.categories.index');
+          let method = 'post', routeName = route('admin.category.index');
           if (this.view === 'edit') {
-            method = 'put', routeName = route('admin.categories.update', { category: this.category });
+            method = 'put', routeName = route('admin.category.update', { category: this.category });
           }
 
           axios[method](routeName, this.$data).then(res => {
             if (res.status === 200) {
               toastr.success(res.data.smg);
-              window.location.replace(route('admin.categories.show', { category : res.data.id }));
+              window.location.replace(route('admin.category.show', { category : res.data.id }));
             } else {
               toastr.error(res.data.smg);
             }

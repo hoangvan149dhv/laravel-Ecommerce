@@ -38737,7 +38737,7 @@ a.text-dark:focus {
 
 .custom-checkbox.b-custom-control-sm,
 .input-group-sm .custom-checkbox {
-  font-size: 0.76562rem;
+  font-size: 0.76563rem;
   line-height: 1.5;
   padding-left: 1.3125rem;
 }
@@ -38802,7 +38802,7 @@ a.text-dark:focus {
 
 .custom-switch.b-custom-control-sm .custom-control-label,
 .input-group-sm .custom-switch .custom-control-label {
-  font-size: 0.76562rem;
+  font-size: 0.76563rem;
   line-height: 1.5;
 }
 
@@ -38982,7 +38982,7 @@ a.text-dark:focus {
 .input-group-sm.custom-file,
 .input-group-sm .custom-file-input,
 .input-group-sm .custom-file-label {
-  font-size: 0.76562rem;
+  font-size: 0.76563rem;
   height: calc(1.5em + 0.5rem + 2px);
 }
 
@@ -39319,7 +39319,7 @@ input[type="color"].form-control:disabled {
 
 .custom-radio.b-custom-control-sm,
 .input-group-sm .custom-radio {
-  font-size: 0.76562rem;
+  font-size: 0.76563rem;
   line-height: 1.5;
   padding-left: 1.3125rem;
 }

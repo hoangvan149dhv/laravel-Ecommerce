@@ -25,6 +25,7 @@ Route::name('admin.')->group(function () {
 
 Route::namespace('Admin')->name('admin.')->middleware(['middleware' => 'auth'])->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
-    Route::resource('categories', 'CategoriesController');
+    Route::resource('category', 'CategoryController');
+    Route::resource('product', 'ProductController');
 });
 

@@ -9,6 +9,9 @@ app/storage/
 
 # Laravel 5 & Lumen specific
 public/storage
+public/js
+public/css
+resource/js/libraries/ziggy.js
 public/hot
 
 # Laravel 5 & Lumen specific with changed public path
