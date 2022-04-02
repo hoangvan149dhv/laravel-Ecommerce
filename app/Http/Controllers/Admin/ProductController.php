@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
         $products = $product->get();
         foreach ($products as $product) {
-            
+
         }
     }
 

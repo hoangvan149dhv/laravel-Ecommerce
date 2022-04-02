@@ -18,6 +18,9 @@ class Category extends Model implements HasMedia
 {
     use HasMediaTrait;
 
+    public $view = ['index' => 'admin.category.index',
+        'show' => 'admin.category.show'];
+
     /**
      * The attributes that are mass assignable.
      *

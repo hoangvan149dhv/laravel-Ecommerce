@@ -23,7 +23,7 @@ class HomeController extends AdminController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('admin.home.index', ['user' => $this->user]);
     }

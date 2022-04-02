@@ -28,7 +28,7 @@
               ><strong>Vui lòng nhập mô tả</strong></span>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit" @click="handleClick">Submit form</button>
+          <button class="btn btn-primary float-right" type="submit" @click="handleClick">Lưu</button>
         </div>
       </div>
     </div>
@@ -67,7 +67,6 @@ export default {
           if (this.view === 'edit') {
             method = 'put', routeName = route('admin.category.update', { category: this.category });
           }
-
           axios[method](routeName, this.$data).then(res => {
             if (res.status === 200) {
               toastr.success(res.data.smg);

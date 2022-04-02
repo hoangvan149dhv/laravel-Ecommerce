@@ -7,28 +7,10 @@ use App\Models\Category;
 
 class CategoryController extends AdminController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request, Category $category)
+    public function __construct(Category $category)
     {
-        if (!is_numeric($page = $request->page)) {
-            $page = 1;
-        }
-
-        $categories = $category->paginate(10, ['*'], 'page', $page);
-
-        $categories->map(function ($category) {
-            $category->link = route('admin.category.show', $category);
-        });
-
-        if ($request->get_jsons) {
-            return response()->json($categories);
-        }
-
-        return view('admin.category.index', compact('categories'));
+        $this->model = $category;
+        parent::__construct();
     }
 
     /**
@@ -47,10 +29,9 @@ class CategoryController extends AdminController
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Category $categoryModel)
+    public function store(Request $request)
     {
-
-        if (!$category = $categoryModel->create($request->only(['name', 'desc']))) {
+        if (!$category = $this->model->create($request->only(['name', 'desc']))) {
             // Upload Image
             return response('Không thể lưu được, vui lòng thử lại sau', 500);
         }
@@ -115,6 +96,11 @@ class CategoryController extends AdminController
     {
         if (!$category->delete()) {
             return response([], 500);
+        }
+
+        // Delete media
+        foreach ($category->media as $media) {
+            $media->delete();
         }
 
         return response('Xóa thành công', 200);
