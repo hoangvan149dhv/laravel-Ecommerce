@@ -1,4 +1,4 @@
-@extends('client.layouts.app')
+@extends('client.layouts.base')
 
 @section('script')
 

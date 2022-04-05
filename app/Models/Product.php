@@ -2,16 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use App\Models\interfaces\Media as MediaInterFace;
+use App\Models\Traits\Media;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Illuminate\Support\Facades\File;
 
-class Product extends Model implements HasMedia
+class Product extends AbstractModel implements HasMedia, MediaInterFace
 {
     use HasMediaTrait;
+    use Media;
+
+    protected $view = ['index' => 'admin.product.index',
+                    'show' => 'admin.product.show',
+                    'create' => 'admin.product.create'];
+
+    protected $collectionName = 'product' ;
 
     /**
      * The attributes that are mass assignable.
@@ -29,19 +34,5 @@ class Product extends Model implements HasMedia
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-
-    public function uploadImage(Request $request)
-    {
-        if ($request->imageName && File::exists($categoryImage = storage_path('tmp/uploads/' . $request->imageName))) {
-            $this->addMedia($categoryImage)
-                ->toMediaCollection('category');
-
-            return true;
-        }
-
-        Log::error('Update image Khong thanh cong id: ' . $this->id);
-
-        return false;
     }
 }

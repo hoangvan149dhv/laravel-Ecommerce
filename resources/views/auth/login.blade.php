@@ -1,9 +1,4 @@
-@extends('client.layouts.app')
-
-@section('title_on_top')
-    <span>sumuzu Matching</span>
-@endsection
-
+@extends('client.layouts.base')
 @section('content')
     <div class="container">
         <div class="row mt-3 justify-content-center">

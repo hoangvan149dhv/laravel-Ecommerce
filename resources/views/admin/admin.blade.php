@@ -1,6 +1,6 @@
-@extends('admin.layouts.base')
+@extends('layouts.base')
 @section('styles')
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/admin/app.css') }}" rel="stylesheet">
     @yield('style')
 @endsection
 @section('body')

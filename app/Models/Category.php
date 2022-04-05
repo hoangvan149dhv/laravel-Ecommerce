@@ -2,25 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use App\Models\Traits\Media;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
-
+use App\Models\interfaces\Media as MediaInterFace;
 /**
  * Class Categories.
  *
  * @package namespace App\Entities;
  */
-class Category extends Model implements HasMedia
+class Category extends AbstractModel implements HasMedia, MediaInterFace
 {
     use HasMediaTrait;
 
-    public $view = ['index' => 'admin.category.index',
-        'show' => 'admin.category.show'];
+    use Media;
 
+    public $view = ['index' => 'admin.category.index',
+                    'show' => 'admin.category.show',
+                    'create' => 'admin.category.create'];
+
+    public $collectionName = 'category' ;
     /**
      * The attributes that are mass assignable.
      *
@@ -30,18 +31,4 @@ class Category extends Model implements HasMedia
         'name',
         'desc',
     ];
-
-    public function uploadImage(Request $request)
-    {
-        if ($request->imageName && File::exists($categoryImage = storage_path('tmp/uploads/' . $request->imageName))) {
-            $this->addMedia($categoryImage)
-                ->toMediaCollection('category');
-
-            return true;
-        }
-
-        Log::error('Update image Khong thanh cong id: ' . $this->id);
-
-        return false;
-    }
 }

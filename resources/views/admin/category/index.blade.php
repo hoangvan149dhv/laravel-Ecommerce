@@ -12,7 +12,7 @@
                         <h2>Danh mục sản phẩm</h2>
                     </div>
                     <div class="card-body">
-                        <div class="mb-5 float-right"><a class="mb-1 btn btn-lg btn-dark" href="{{ route('admin.category.create') }}">Thêm danh mục</a></div>
+                        <div class="mb-5 float-right"><a class="mb-1 btn btn-lg btn-primary" href="{{ route('admin.category.create') }}">Thêm danh mục</a></div>
                         <table-content
                             :items='@json($items)'
                         />

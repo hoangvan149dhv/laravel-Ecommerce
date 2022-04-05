@@ -2,7 +2,7 @@
   <div class="row justify-content-end dropzone-construct">
     <div class="col">
       <div class="text-center flex-wrap">
-        <div id="dropzone-construct" class="needsclick dropzone ml-0">
+        <div id="dropzone" class="dropzone ml-0">
           <div class="dz-message" data-dz-message>
             <div>Chọn hình tại đây</div>
             <div><small class="text-danger">Vui lòng sử dụng định dạng file pdf/png/jpeg/jpg</small></div>
@@ -27,7 +27,7 @@ export default {
   methods: {
     dropzone() {
       let self = this;
-      Dropzone.options.dropzoneConstruct = {
+      Dropzone.options.dropzone = {
         url: route('media.store'),
         maxFilesize: 20,
         maxFiles: 1,

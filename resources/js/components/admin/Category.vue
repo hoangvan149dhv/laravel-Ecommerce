@@ -3,7 +3,7 @@
     <div class="col-lg-8">
       <div class="card card-default">
         <div class="card-header card-header-border-bottom">
-          <h2>{{ view == 'edit' ? 'Sửa' : 'Thêm' }} danh mục </h2>
+          <h2>{{ view == 'edit' ? 'Sửa' : 'Thêm' }} Danh mục </h2>
         </div>
         <div class="card-body">
           <div class="form-row">

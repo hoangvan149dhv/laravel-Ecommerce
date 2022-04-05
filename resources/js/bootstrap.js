@@ -22,6 +22,7 @@ try {
     require('bootstrap');
     require('owl.carousel');
     require('owl.carousel/dist/owl.carousel');
+    require('slick-carousel/slick/slick.min')
     window.queryString = require('querystring');
     window.Swal = require('sweetalert2');
     window.toastr = require('toastr/toastr');

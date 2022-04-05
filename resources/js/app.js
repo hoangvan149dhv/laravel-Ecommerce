@@ -20,12 +20,12 @@ import { BootstrapVue } from 'bootstrap-vue'
 const files = require.context('./', true, /\.vue$/i);
 
 
-console.error(files.keys()[0]);
-console.error(files.keys()[0].split('/'));
-console.error(files.keys()[0].split('/').pop());
-console.error(files.keys()[0].split('/').pop().split('.'));
-console.error(files.keys()[0].split('/').pop().split('.')[0]);
-console.error(files(files.keys()[0]));
+// console.error(files.keys()[0]);
+// console.error(files.keys()[0].split('/'));
+// console.error(files.keys()[0].split('/').pop());
+// console.error(files.keys()[0].split('/').pop().split('.'));
+// console.error(files.keys()[0].split('/').pop().split('.')[0]);
+// console.error(files(files.keys()[0]));
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);

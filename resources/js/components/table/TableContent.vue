@@ -12,7 +12,7 @@
       <!--  Main table  -->
       <b-table id="table-content"
                hover
-               head-variant="dark"
+               head-variant="primary"
                :busy="loading"
                fixed
                :fields="fields" :items="data.data"

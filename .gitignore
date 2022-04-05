@@ -14,7 +14,6 @@ yarn-error.log
 /public/js
 /public/css
 /public/fonts
-/public/images/
 !/public/images/assets/*
 storage/tmp/uploads/*
 /public/node_modules
