@@ -69,6 +69,7 @@
       position: absolute;
       bottom: 0;
       right: 15px;
+      max-height: 300px;
 
       @media #{$small_mobile} {
         max-height: 247px;

@@ -36,10 +36,10 @@ export default {
           'X-CSRF-TOKEN': document.head.querySelector('meta[name="csrf-token"]').content
         },
         init: function () {
-          if (self.img.url) {
+          if (self.img.full_url) {
             let mockFile = {name: self.img.file_name, size: self.img.size, type: self.img.mime_type};
             this.options.addedfile.call(this, mockFile);
-            this.options.thumbnail.call(this, mockFile, self.img.url);
+            this.options.thumbnail.call(this, mockFile, self.img.full_url);
             mockFile.previewElement.classList.add('dz-success');
             mockFile.previewElement.classList.add('dz-complete');
           }

@@ -13,10 +13,10 @@ class Product extends AbstractModel implements HasMedia, MediaInterFace
     use Media;
 
     protected $view = ['index' => 'admin.product.index',
-                    'show' => 'admin.product.show',
-                    'create' => 'admin.product.create'];
+        'show' => 'admin.product.show',
+        'create' => 'admin.product.create'];
 
-    protected $collectionName = 'product' ;
+    protected $collectionName = 'product';
 
     /**
      * The attributes that are mass assignable.
@@ -35,4 +35,21 @@ class Product extends AbstractModel implements HasMedia, MediaInterFace
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function getProducts($limit = 10)
+    {
+        $products = $this->orderbyDesc('id')->limit($limit)->get();
+        $items = $products->map(function ($product) {
+            $product->getImage($product);
+            return [
+                'id' => $product->id,
+                'name' => $product->name,
+                'price' => format_currency($product->price),
+                'image' => $product->image->url ?? asset('image/no-image.png'),
+            ];
+        });
+
+        return $items;
+    }
+
 }

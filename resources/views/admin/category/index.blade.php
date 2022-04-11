@@ -13,7 +13,7 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-5 float-right"><a class="mb-1 btn btn-lg btn-primary" href="{{ route('admin.category.create') }}">Thêm danh mục</a></div>
-                        <table-content
+                        <table-content-by-admin
                             :items='@json($items)'
                         />
                     </div>

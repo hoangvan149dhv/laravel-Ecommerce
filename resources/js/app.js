@@ -9,6 +9,8 @@ import VeeValidate, { Validator }  from 'vee-validate';
 require('./bootstrap');
 window.Vue = require('vue');
 import { BootstrapVue } from 'bootstrap-vue'
+import Select2 from 'v-select2-component';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -40,6 +42,8 @@ Vue.use(VeeValidate, {
     fieldsBagName: 'veeFields'
 });
 Vue.use(BootstrapVue);
+
+Vue.component('Select2', Select2);
 
 new Vue({
     el: '#app',

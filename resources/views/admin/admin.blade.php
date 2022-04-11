@@ -5,12 +5,16 @@
 @endsection
 @section('body')
     <div id="wrapper" style="min-height: 100vh">
-    @include('admin.components.sidebar')
+    @if(isset($user))
+        @include('admin.components.sidebar')
+    @endif
     <!-- Content Wrapper -->
-        <div id="content-wrapper" class="page-wrapper d-flex flex-column">
+        <div id="content-wrapper" class="{{ isset($user) ? 'page-wrapper' : '' }} d-flex flex-column">
             <!-- Main Content -->
             <div id="content">
-                @include('admin.components.header')
+                @if(isset($user))
+                    @include('admin.components.header')
+                @endif
                 <div class="container-fluid">
                     @yield('content')
                 </div>

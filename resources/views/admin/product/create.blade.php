@@ -3,7 +3,7 @@
     <div class="content">
         <product
             view="create"
-            :categories='@json($data->getAllCategories())'
+            :categories='@json($data->getCategories())'
         />
     </div>
 @endsection

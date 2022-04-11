@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 RED='\033[0;32m'
 NC='\033[0m' # No Color
-printf "${RED}> Ziggy route generating...${NC}\n"
-php artisan ziggy:generate "resources/js/libraries/ziggy.js"
 if [ "$1" != "prod" ]; then
  printf "${RED}> Development mode running...${NC}\n"
  npm run watch

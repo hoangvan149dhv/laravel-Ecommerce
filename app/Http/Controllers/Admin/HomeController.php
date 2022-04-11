@@ -8,17 +8,6 @@ use Illuminate\Http\Request;
 class HomeController extends AdminController
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-        parent::__construct();
-    }
-
-    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

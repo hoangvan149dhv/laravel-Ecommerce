@@ -22,6 +22,7 @@ abstract class AdminController extends AbstractController
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
+            $this->model = app($this->model);
             $this->user = $request->user();
             view()->share('user', $this->user);
             return $next($request);

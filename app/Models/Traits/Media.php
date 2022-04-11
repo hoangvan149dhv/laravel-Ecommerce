@@ -25,11 +25,17 @@ trait Media
 
     public function getImage(MediaInterFace $model)
     {
+        $model->image = new \stdClass();
+
         if (!empty($img = $model->getFirstMedia($this->collectionName))) {
-            $imageUrl = $img->getFullUrl();
             $model->image = $img;
-            $model->image->url = $imageUrl;
+            $model->image->full_url = $img->getFullUrl();
+            $model->image->url = $img->getUrl();
+            return true;
         }
+        $model->image->url = asset('image/no-image.png');
+
+        return false;
     }
 
     public function removeImage(MediaInterFace $model)

@@ -1,4 +1,4 @@
-@extends('client.layouts.base')
+@extends('admin.admin')
 @section('content')
     <div class="container">
         <div class="row mt-3 justify-content-center">

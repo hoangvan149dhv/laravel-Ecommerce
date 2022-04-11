@@ -1,6 +1,7 @@
 /**************menu part start*****************/
 .main_menu {
-	position: absolute;
+	position: sticky;
+    background: $white;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -120,28 +121,25 @@
 			content: "";
 			border: 0px solid transparent;
 		}
-	
+
 		i {
 			color: $black_color;
 			position: relative;
 			z-index: 1;
 			font-size: 15px;
-	
-			&:after {
-				position: absolute;
-				border-radius: 50%;
-				background-color: rgb(241, 61, 128);
-				width: 14px;
-				height: 14px;
-				right: -8px;
-				top: -8px;
-				content: "5";
-				text-align: center;
-				line-height: 15px;
-				font-size: 10px;
-				color: $white-color;
-			}
-	
+            span {
+                position: absolute;
+                border-radius: 50%;
+                background-color: $btn_bg;
+                width: 14px;
+                height: 14px;
+                right: -8px;
+                top: -8px;
+                text-align: center;
+                line-height: 15px;
+                font-size: 10px;
+                color: $white-color;
+            }
 		}
 	}
 }
@@ -261,7 +259,7 @@
 	.menu_icon{
 		i{
 			color: $black_color;
-			
+
 		}
 	}
 	.main_menu a i {
